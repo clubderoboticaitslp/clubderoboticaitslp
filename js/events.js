@@ -18,9 +18,10 @@ $(document).ready( function () {
             endingTop: '100%'
         });
     });
-    $('.modal').modal();
+    $(".modal").modal();
 });
 $(window).load(function(){
     $("#preloader div").delay(800).fadeOut();
-    $("#preloader").delay(800).fadeOut("slow");    
+    $("#preloader").delay(800).fadeOut("slow");
+    $(".modal").modal();
 });
