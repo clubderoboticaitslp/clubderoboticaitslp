@@ -44,7 +44,7 @@ $(document).ready( function () {
             }
             else {
                 Materialize.toast("Verifica tu email para tener acceso a los recursos",20000);
-                if(!(pathname=="/Eventos" || pathname=="/" || pathname=="/Registro" || pathname=="/Login")){
+                if(!(pathname=="/" || pathname=="/Registro" || pathname=="/Login")){
                     window.location.href = "https://clubderoboticaitslp.github.io/";
                 }
             }
@@ -63,8 +63,8 @@ $(document).ready( function () {
                 document.location.href = "/Login";
             });
             var pathname = window.location.pathname;
-            if(!(pathname=="/GrandesCorceles" || pathname=="/" || pathname=="/Registro" || pathname=="/Login" || pathname=="/Robotik" || pathname=="/Robotik/Eventos")){
-                //window.location.href = "https://olimpiada-potosina-de-informatica.github.io";
+            if(!(pathname=="/" || pathname=="/Registro" || pathname=="/Login")){
+                window.location.href = "https://clubderoboticaitslp.github.io";
             }
         }
     });

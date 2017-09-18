@@ -244,7 +244,7 @@ $(document).ready(function() {
         firebase.database().ref().update(updates).then(function(){
             Materialize.toast("Listo!",5000);
             setTimeout(function () {
-                window.location.href = "https://olimpiada-potosina-de-informatica.github.io/Profile";
+                window.location.href = "https://clubderoboticaitslp.github.io/Profile";
             }, 3000);              
         }, function(error){
             Materialize.toast("Error!",1700);
@@ -274,7 +274,7 @@ $(document).ready(function() {
                             firebase.database().ref().update(updates).then(function(){
                                 Materialize.toast("Listo! se registro tu solicitud al evento",5000);
                                 setTimeout(function () {
-                                    window.location.href = "https://olimpiada-potosina-de-informatica.github.io/Profile";
+                                    window.location.href = "https://clubderoboticaitslp.github.io/Profile";
                                 }, 3000);
                             });
                         }
