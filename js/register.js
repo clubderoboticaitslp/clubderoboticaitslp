@@ -95,7 +95,7 @@ $(document).ready(function() {
                     user_t:"Desconocido"
                 });
                 setTimeout(function () {
-                    window.location.href = "https://olimpiada-potosina-de-informatica.github.io";
+                    window.location.href = "https://clubderoboticaitslp.github.io";
                 }, 8000);
             }).catch(function(error) {
                 var errorCode = error.code;

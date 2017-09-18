@@ -73,7 +73,7 @@ var intents = 4;
             $("#ErrorMSGL").hide();
             $("#btnsenderl").hide();
             firebase.auth().signInWithEmailAndPassword($("#xemail").val(),$("#xpassword").val()).then(function(user){
-                window.location.href = "https://olimpiada-potosina-de-informatica.github.io";
+                window.location.href = "https://clubderoboticaitslp.github.io";
             }).catch(function(error) {
                 $("#btnsenderl").show();
                 var errorCode = error.code;
