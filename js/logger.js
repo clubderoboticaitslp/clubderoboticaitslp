@@ -8,7 +8,7 @@ var intents = 4;
         auth.sendPasswordResetEmail(emailAddress).then(function() {
             Materialize.toast("¡Perfecto!, Revisa Tu Correo",3000);
             setTimeout(function () {
-                window.location.href = "https://olimpiada-potosina-de-informatica.github.io";
+                window.location.href = "https://clubderoboticaitslp.github.io";
             }, 3000);
         }, function(error) {
             $("#RecoPas").show();
