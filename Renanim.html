@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <title>OPI - Renanim</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/additional-methods.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>        
+        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+        <script src="js/init_js.js"></script>
+        <script src="js/renanim.js"></script>
+        <script src="js/auther.js"></script>
+    </head>
+    <body>
+        <div id="preloader"><div></div></div>
+        <nav class="black z-depth-3" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="https://olimpiada-potosina-de-informatica.github.io" class="brand-logo circle"><img class="circle z-depth-5" height="135" width="135" src="/imgs/logo_opi.png"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li id="d_OPI"><a href="/Entrenamiento" class="white-text teal">Curso OPI</a></li>
+                    <li id="d_robotik"><a href="/Robotik" class="white-text red">Club de Robótica ITSLP</a></li>
+                    <li id="d_Reg"><a class="white-text" href="/Registro">Registro</a></li>
+                    <li id="d_Ses_out"><a class="white-text">Cerrar sesión</a></li>
+                    <li><a id="d_Ses_auth_t" class="white-text">Login</a></li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                    <li id="d_OPI"><a href="/Entrenamiento" class="white-text teal">Curso OPI</a></li>
+                    <li id="m_robotik"><a href="/Robotik" class="white-text red">Club de Robótica ITSLP</a></li>
+                    <li id="m_Reg"><a href="/Registro">Registro</a></li>
+                    <li id="m_Ses_out"><a>Cerrar sesión</a></li>
+                    <li><a id="m_Ses_auth_t">Login</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+        <div class="section">
+            <br><br><br>
+            <div class="row">                
+                <div class="col s12 m12 l12 center teal z-depth-3 white-text">
+                    <h4>Ventana Admin - Renanim</h4>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <ul id="tabs-swipe" class="tabs">
+                <li class="tab col s3"><a class="active" href="#Consultas">Consultas</a></li>
+                <li class="tab col s3"><a href="#Administrar">Administrar</a></li>
+                <li class="tab col s3"><a href="#Problemas">Problemas</a></li>
+                <li class="tab col s3"><a href="#Agenda">Agenda</a></li>
+                <li class="tab col s3"><a href="#Solicitudes">Solicitudes</a></li>
+            </ul>
+            <div id="Consultas">
+                <div class="row container">
+                    <div class="col s12">
+                        <div class="choiser input-field col s12 m12 l12">
+                            <div class="input-field col s12 m6 l4">
+                                <input id="f_name" type="text" name="f_name">
+                                <label for="f_name">Nombre(s)</label>
+                            </div>
+                            <div class="input-field col s12 m6 l4">
+                                <input id="l_name" type="text" name="l_name">
+                                <label for="l_name">Apellidos</label>
+                            </div>
+                            <div class="input-field col s12 m6 l4">
+                                <input id="email" type="email" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field col s4 m6 l3">
+                                <input type="checkbox" id="u_aprovat"/>
+                                <label for="u_aprovat">Datos OK</label>
+                            </div>
+                            <div class="input-field col s2 m7 l3">
+                                <input id="u_grade" type=number name="u_grade">
+                                <label for="u_grade">Num Año/Sem</label>
+                            </div>
+                            <div class="input-field col s6 m5 l3">
+                                <input name="u_grade_sem_year" type="radio" id="t1" />
+                                <label for="t1">Año</label>
+                                <input name="u_grade_sem_year" type="radio" id="t2" />
+                                <label for="t2">Sem</label>
+                            </div>
+                            <div class="input-field col s12 m6 l3">
+                                <input id="u_grade_t" type="text" name="u_grade_t">
+                                <label for="u_grade_t">Tipo de Grado</label>
+                            </div>
+                            <div class="input-field col s12 m6 l4">
+                                <input id="u_lic" type="text" name="u_lic">
+                                <label for="u_lic">Carrera</label>
+                            </div>
+                            <div class="input-field col s12 m6 l4">
+                                <input id="u_mat" type="text" name="u_mat">
+                                <label for="u_mat">Matrícula</label>
+                            </div>
+                            <div class="input-field col s12 m6 l4">
+                                <input id="u_school" type="text" name="u_school">
+                                <label for="u_school">Escuela</label>
+                            </div>
+                            <div class="input-field col s12 m6 l4">
+                                <input id="user_t" type="text" name="user_t">
+                                <label for="user_t">Tipo de Usuario</label>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 l4 input-field"><button id="r_sender" class="btn teal">Consultar</button></div>
+                    </div>
+                    <div class="col s12" id="r_Resultados1"></div>
+                    <div class="col s12" id="r_filter1"></div>
+                    <div class="col s12" id="r_tab1"></div>
+                </div>
+            </div>
+            <div id="Administrar" class="col s12 red">Crear y dar privilegios a usuarios ademas de cambios de contraseña etc</div>
+            <div id="Problemas" class="col s12 green">añadir problemas y revisar el avanze de algun usuario, sugerir problemas y añadir tags</div>
+            <div id="Agenda" class="col s12 green">Agregar actividades para los pequeños ponys</div>
+            <div id="Solicitudes">Ver solicitudes manuales por seguridad para todos los usuarios
+                <div class="row container">
+                    <div class="col s12">
+                        <div class="choiser input-field col s12 m8 l8">
+                            <select id="r_sol_evento">
+                                <option value="" disabled selected>Lista de eventos disponibles</option>
+                            </select>
+                            <label>Selecciona algún evento</label>
+                        </div>
+                        <div class="col s12 m4 l4 input-field"><button id="r_sender1" class="btn">Consultar</button></div>
+                        <div class="col s12" id="r_sol_list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer teal">
+            <div class="container">
+                <div class="row">
+                    <div class="col l8 s12">
+                        <h5 class="white-text">Olimpiada Potosina de Informática</h5>
+                        <p class="grey-text text-lighten-4">La OPI (Olimpiada Potosina de Informática) es un evento organizado gracias a la colaboración de diferentes entidades educativas del estado de san Luis potosí, de prácticamente todos los niveles; Con el claro objetivo de formar a los jóvenes y niños en las artes de la programación y prepararlos para torneos, abiertos y justas que involucren esta disciplina.</p>
+                    </div>
+                    <div class="col l4 s12">
+                        <h5 class="white-text">Contacto</h5>
+                        <ul><li><a class="white-text" href="#!">Comité de la Olimpiada Potosina de Informática</a></li></ul>
+                    </div>
+                </div>                
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
