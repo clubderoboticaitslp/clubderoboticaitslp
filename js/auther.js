@@ -44,7 +44,7 @@ $(document).ready( function () {
             }
             else {
                 Materialize.toast("Verifica tu email para tener acceso a los recursos",20000);
-                if(!(pathname=="/GrandesCorceles" || pathname=="/" || pathname=="/Registro" || pathname=="/Login")){
+                if(!(pathname=="/Eventos" || pathname=="/" || pathname=="/Registro" || pathname=="/Login")){
                     window.location.href = "https://clubderoboticaitslp.github.io/";
                 }
             }
