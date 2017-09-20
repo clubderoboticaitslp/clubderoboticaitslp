@@ -82,29 +82,43 @@
                                 <label for="u_grade">Num Año/Sem</label>
                             </div>
                             <div class="input-field col s6 m3 l4">
-                                <input name="u_grade_sem_year" type="radio" id="t1" />
+                                <input name="u_grade_sem_year" type="radio" id="t1" value="Año" />
                                 <label for="t1">Año</label>
-                                <input name="u_grade_sem_year" type="radio" id="t2" />
+                                <input name="u_grade_sem_year" type="radio" id="t2" value="Semestre"/>
                                 <label for="t2">Sem</label>
                             </div>
-                            <div class="input-field col s12 m6 l4">
-                                <input id="u_grade_t" type="text" name="u_grade_t">
-                                <label for="u_grade_t">Tipo de Grado</label>
+                            <div class="input-field col s12 m12 l12 padder">
+                                <input name="u_grade_t" type="radio" id="pick3" value="Primaria"/>
+                                <label for="pick3">Primaria</label>
+                                <input name="u_grade_t" type="radio" id="pick4" value="Secundaria"/>
+                                <label for="pick4">Secundaria</label>
+                                <input name="u_grade_t" type="radio" id="pick5" value="Bachillerato"/>
+                                <label for="pick5">Bachillerato</label>
+                                <input name="u_grade_t" type="radio" id="pick6" value="Licenciatura" checked/>
+                                <label for="pick6">Licenciatura</label>
                             </div>
-                            <div class="input-field col s12 m6 l4">
-                                <input id="u_lic" type="text" name="u_lic">
-                                <label for="u_lic">Carrera</label>
+                            <div class="choiser input-field col s12 m6 l4">
+                                <select id="x_lic" name="x_lic">
+                                    <option value="0" selected>Licenciatura</option>
+                                </select>
+                                <label for="x_lic">Licenciatura</label>
                             </div>
                             <div class="input-field col s12 m6 l4">
                                 <input id="u_mat" type="text" name="u_mat">
                                 <label for="u_mat">Matrícula</label>
                             </div>
-                            <div class="input-field col s12 m6 l4">
-                                <input id="u_school" type="text" name="u_school">
+                            <div class="choiser input-field col s12 m6 l4">
+                                <select id="u_school" type="text" name="u_school">
+                                    <option value="0" selected>Sin Escuela</option>
+                                </select>
                                 <label for="u_school">Escuela</label>
                             </div>
-                            <div class="input-field col s12 m6 l4">
-                                <input id="user_t" type="text" name="user_t">
+                            <div class="choiser input-field col s12 m6 l4">
+                                <select id="user_t" type="text" name="user_t">
+                                <option value="0"  selected>Tipos de Usuario</option>
+                                    <option value="Competidor">Competidor</option>
+                                    <option value="Profesor">Profesor</option>
+                                </select>
                                 <label for="user_t">Tipo de Usuario</label>
                             </div>
                         </div>
