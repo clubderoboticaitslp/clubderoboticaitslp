@@ -21,6 +21,8 @@ $(document).ready(function() {
                     if(!$("#l_name").val().length==0 && !childSnapshot.val().l_name.toString().includes($("#l_name").val().toString()))con=false;
                     if(!$("#email").val().length==0 && !childSnapshot.val().email.toString().includes($("#email").val().toString()))con=false;
                     if(!$("#u_grade").val().length==0 && !childSnapshot.val().u_grade.toString().includes($("#u_grade").val().toString()))con=false;
+                    alert($('input[name=u_grade_sem_year]:checked').val()+childSnapshot.val().u_grade_sem_year.val()+$("#u_grade_sem_year").val().toString());
+                    if(!$('input[name=u_grade_sem_year]:checked').val() && !childSnapshot.val().u_grade_sem_year.val()==$("#u_grade_sem_year").val().toString()))con=false;
                     if(con){
                         snapshot.forEach(function(childSnapshot2) {
                             var childData = childSnapshot2.val();
