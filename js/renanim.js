@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    /*var query = firebase.database().ref("/form/event/").orderByKey();
+    var query = firebase.database().ref("/form/event/").orderByKey();
     query.once("value").then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var key = childSnapshot.key;
@@ -7,7 +7,7 @@ $(document).ready(function() {
             $("#r_consulta").append($('<option>', { value: key, text: key}));
             $("#r_consulta").material_select();
         });
-    });*/
+    });
     $("#r_sender").click(function(){
         $("#r_tab1").empty();
         firebase.database().ref('/users/').once('value').then(function(snapshot){
@@ -60,6 +60,7 @@ $(document).ready(function() {
         color: "#26a69a"
     });
 });
+$("#r_sol_evento").material_select();
 $(window).load(function(){    
     $("#r_sender1").click(function(){
         
