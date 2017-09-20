@@ -263,7 +263,7 @@ $(document).ready(function() {
                         if(hasevent2){
                             Materialize.toast("Ya te registraste al evento!",1700);
                         }else{
-                            updates['/solicitud/' + s_user+'/'+val_event+"/"] = false;
+                            updates['/solicitud/' + s_user+'/'+val_event+"/"] = 1;
                             firebase.database().ref().update(updates).then(function(){
                                 Materialize.toast("Listo! se registro tu solicitud al evento",5000);
                                 setTimeout(function () {
