@@ -8,7 +8,7 @@ $(document).ready(function() {
             $("#r_consulta").material_select();
         });
     });
-    $("#r_sender").click(function(){
+    $("#r_sender_consultar").click(function(){
         $("#r_tab1").empty();
         firebase.database().ref('/users/').once('value').then(function(snapshot){
             var x=0;
@@ -17,13 +17,10 @@ $(document).ready(function() {
                 var tex='';
                 var con=true;
                 firebase.database().ref('/users/'+key+'/').once('value').then(function(snapshot){
-                    if(!$("#f_name").val().length==0 && !childSnapshot.val().f_name.toString().includes($("#f_name").val().toString()))con=false;
-                    if(!$("#l_name").val().length==0 && !childSnapshot.val().l_name.toString().includes($("#l_name").val().toString()))con=false;
-                    if(!$("#email").val().length==0 && !childSnapshot.val().email.toString().includes($("#email").val().toString()))con=false;
-                    if(!$("#u_aprovat").val().length==0 && !childSnapshot.val().u_aprovat.toString().includes($("#u_aprovat").val().toString()))con=false;
-                    if(!$("#u_grade").val().length==0 && !childSnapshot.val().u_grade.toString().includes($("#u_grade").val().toString())){
-                        con=false;
-                    }
+                    if(!$("#f_name").val().length==0 && !childSnapshot.val().f_name.toString().includes($("#f_name").val().toString()))con=true;
+                    if(!$("#l_name").val().length==0 && !childSnapshot.val().l_name.toString().includes($("#l_name").val().toString()))con=true;
+                    if(!$("#email").val().length==0 && !childSnapshot.val().email.toString().includes($("#email").val().toString()))con=true;
+                    if(!$("#u_grade").val().length==0 && !childSnapshot.val().u_grade.toString().includes($("#u_grade").val().toString()))con=true;
                     if(con){
                         snapshot.forEach(function(childSnapshot2) {
                             var childData = childSnapshot2.val();
@@ -45,19 +42,6 @@ $(document).ready(function() {
                 });
             });
         });
-    });
-    $("#r_consulta").css({
-        display: 'inline',
-        position: 'absolute',
-        float: 'left',
-        padding: 0,
-        margin: 0,
-        border: '1px solid rgba(255,255,255,0)',
-        height: 0, 
-        width: 0,
-        top: '-2em',
-        left: '3em',
-        color: "#26a69a"
     });
 });
 $("#r_sol_evento").material_select();
