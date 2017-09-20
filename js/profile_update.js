@@ -184,15 +184,8 @@ $(document).ready(function() {
                     $("#p_nat").html(snapshot.val().u_nat);
                 }
                 Materialize.updateTextFields();
-            });            
-            firebase.database().ref('/solicitud/' + s_user).once('value').then(function(snapshot){
-                snapshot.forEach(function(childSnapshot) {
-                    var key = childSnapshot.key;
-                    var childData = childSnapshot.val();
-                    $("#Soli_send").append('<div class="card-panel grey lighten-5 z-depth-1 row"><div class="col s6 m7 l7">'+key+'</div><div class="col s4 m4 l4">En Espera</div><div class="col s1 m1 l1"><i class="material-icons">list</i></div></div>');
-                });
             });
-            firebase.database().ref('/solicitud_aproved/' + s_user).once('value').then(function(snapshot){
+            firebase.database().ref('/solicitud/' + s_user).once('value').then(function(snapshot){
                 snapshot.forEach(function(childSnapshot) {
                     var key = childSnapshot.key;
                     var childData = childSnapshot.val();
