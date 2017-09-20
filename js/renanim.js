@@ -17,10 +17,10 @@ $(document).ready(function() {
                 var tex='';
                 var con=true;
                 firebase.database().ref('/users/'+key+'/').once('value').then(function(snapshot){
-                    if(!$("#f_name").val().length==0 && !childSnapshot.val().f_name.toString().includes($("#f_name").val().toString()))con=true;
-                    if(!$("#l_name").val().length==0 && !childSnapshot.val().l_name.toString().includes($("#l_name").val().toString()))con=true;
-                    if(!$("#email").val().length==0 && !childSnapshot.val().email.toString().includes($("#email").val().toString()))con=true;
-                    if(!$("#u_grade").val().length==0 && !childSnapshot.val().u_grade.toString().includes($("#u_grade").val().toString()))con=true;
+                    if(!$("#f_name").val().length==0 && !childSnapshot.val().f_name.toString().includes($("#f_name").val().toString()))con=false;
+                    if(!$("#l_name").val().length==0 && !childSnapshot.val().l_name.toString().includes($("#l_name").val().toString()))con=false;
+                    if(!$("#email").val().length==0 && !childSnapshot.val().email.toString().includes($("#email").val().toString()))con=false;
+                    if(!$("#u_grade").val().length==0 && !childSnapshot.val().u_grade.toString().includes($("#u_grade").val().toString()))con=false;
                     if(con){
                         snapshot.forEach(function(childSnapshot2) {
                             var childData = childSnapshot2.val();
