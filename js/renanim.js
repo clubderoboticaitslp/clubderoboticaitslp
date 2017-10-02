@@ -117,8 +117,8 @@ $(document).ready(function() {
                 if(childSnapshot.child($("#r_sol_evento").val()).exists()){
                     var datachildrens=childSnapshot.child($("#r_sol_evento").val()).val();
                     var ref1 = firebase.database().ref("users/"+key).once("value").then(function(snapshot2){
-                        var n1=snapshot2.child("u_mat").val().toString();
-                        var n2=snapshot2.child("f_name").val().toString();
+                        var n1=snapshot2.child("u_mat").val();
+                        var n2=snapshot2.child("f_name").val();
                         $("#r_sol_list").append('<div class="card-panel grey lighten-5 z-depth-1 row"><div class="col s12 m12 l5">'+n1+"\n"+n2+'</div><div class="input-field col s6 m4 l3"><select id="sol_person'+x+'"name="sol_person'+x+'"><option value="1" selected>En Espera</option><option value="2">Papelería Aprobada</option><option value="3">Solicitud Aprobada</option><option value="4">Solicitud Rechazada</option><option value="5">Papelería Rechazada</option></select><label for="sol_person'+x+'">Opción</label></div><div class="col s6 m4 l1"><i class="material-icons">'+fun2(datachildrens)+'</i></div><div class="col s12 m4 l3"><a class="waves-effect waves-light btn-large '+btncolor+'"onclick="changer(sol_person'+x+',\''+key+'\',\''+$("#r_sol_evento").val()+'\')">¡Cambiar!</a></div></div>');
                         var name_select='sol_person'+x;
                         $(name_select).val(fun1(datachildrens));
