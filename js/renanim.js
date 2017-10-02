@@ -29,7 +29,7 @@ function fun1 ( param ) {
 function changer ( num_select,key_person,evento) {
     var updates={};
     var name_select=num_select;
-    updates['/solicitud/' + key_person.toString()+'/'+evento] = $(name_select).val();
+    updates['/solicitud/' + key_person.toString()+'/'+evento] = parseInt($(name_select).val());
         firebase.database().ref().update(updates).then(function(){
             Materialize.toast("Listo!",5000);
             setTimeout(function () {
