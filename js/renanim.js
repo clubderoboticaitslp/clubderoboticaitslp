@@ -123,10 +123,10 @@ $(document).ready(function() {
                     var ref1 = firebase.database().ref("users/"+key).once("value").then(function(snapshot2){
                         var n1=snapshot2.child("u_mat").val().toString();
                         var n2=snapshot2.child("f_name").val().toString();
-                        $("#r_sol_list").append('<div class="card-panel grey lighten-5 z-depth-1 row"><div class="col s12 m12 l5">'+n1+"\n"+n2+'</div><div class="input-field col s6 m4 l3"><select id="sol_person'+x+'"name="sol_person'+x+'"><option value="1"'+fun3(datachildrens,1)+'>En Espera</option><option value="2"'+fun3(datachildrens,2)+'>Papelería Aprobada</option><option value="3"'+fun3(datachildrens,3)+'>Solicitud Aprobada</option><option value="4"'+fun3(datachildrens,4)+'>Solicitud Rechazada</option><option value="5"'+fun3(datachildrens,5)+'>Papelería Rechazada</option></select><label for="sol_person'+x+'">Opción</label></div><div class="col s6 m4 l1"><i class="material-icons">'+fun2(datachildrens)+'</i></div><div class="col s12 m4 l3"><a class="waves-effect waves-light btn-large '+btncolor+'"onclick="changer(sol_person'+x+',\''+key+'\',\''+$("#r_sol_evento").val()+'\')">¡Cambiar!</a></div></div>');
+                        $("#r_sol_list").append('<div class="card-panel grey lighten-5 z-depth-1 row"><div class="col s12 m12 l5">'+n1+"\n"+n2+'</div><div class="input-field col s6 m4 l3"><select id="sol_person'+x+'"name="sol_person'+x+'"><option value="1">En Espera</option><option value="2">Papelería Aprobada</option><option value="3">Solicitud Aprobada</option><option value="4">Solicitud Rechazada</option><option value="5">Papelería Rechazada</option></select><label for="sol_person'+x+'">Opción</label></div><div class="col s6 m4 l1"><i class="material-icons">'+fun2(datachildrens)+'</i>'+fun1(datachildrens)+'</div><div class="col s12 m4 l3"><a class="waves-effect waves-light btn-large '+btncolor+'"onclick="changer(sol_person'+x+',\''+key+'\',\''+$("#r_sol_evento").val()+'\')">¡Cambiar!</a></div></div>');
                         var name_select='sol_person'+x;
                         $(name_select).val(fun1(datachildrens));
-                        $(name_select).material_select();
+                        $('select').material_select();
                         x++;
                     });
                 }            
