@@ -85,9 +85,9 @@ $(document).ready(function() {
                     if($("#u_school").val()!="0" && !childSnapshot.val().u_school.toString().includes($("#u_school").val()))con=false;
                     if($("#user_t").val()!="0" && !childSnapshot.val().user_t.toString().includes($("#user_t").val()))con=false;
                     if(con){
-                        snapshot.forEach(function(childSnapshot2) {
-                            var childData = childSnapshot2.val();
-                            var ey=childSnapshot2.key;
+                        snapshot.forEach(function(childSnapshot) {
+                            var childData = childSnapshot.val();
+                            var ey=childSnapshot.key;
                             tex=tex+('<div class="divider col s12 z-depth-3"></div><div class="col s4">'+ey+'</div><div id="p_usert" class="col s8"><h6>'+childData+'</h6></div><div class="divider col s12 z-depth-3"></div>');
                         });
                         $("#r_tab1").append('<div class="card-panel grey lighten-5 z-depth-1 row"><div class="col s12 m8 l9 center">'+key+'</div><div class="col s12 m4 l3 center"><a class="waves-effect waves-light btn-large teal" href="#modal'+x+'">Detalles</a></div></div><div id="modal'+x+'" class="modal modal-fixed-footer"><div class="modal-content modex"><div class="row">'+tex+'</div></div><div class="modal-footer"><a href="#!" class="modal-action modal-close waves-effect waves-grey btn-flat">Cerrar</a></div></div>');
@@ -108,7 +108,7 @@ $(document).ready(function() {
     });
     $("#r_solicitudes").click(function(){
         $("#r_sol_list").empty();
-        firebase.database().ref('/solicitud/').once('value').then(function(snapshot){
+        firebase.database().ref('/solicitud/').orderByKey().once('value').then(function(snapshot){
             var x=0;
             var btncolor;
             btncolor='red darken-4';
@@ -116,14 +116,14 @@ $(document).ready(function() {
                 var key = childSnapshot.key;
                 if(childSnapshot.child($("#r_sol_evento").val()).exists()){
                     var datachildrens=childSnapshot.child($("#r_sol_evento").val()).val();
-                    var ref1 = firebase.database().ref("users/"+key).once("value").then(function(snapshot){
-                    var n1=snapshot.child("u_mat").val().toString();
-                    var n2=snapshot.child("f_name").val().toString();
-                    $("#r_sol_list").append('<div class="card-panel grey lighten-5 z-depth-1 row"><div class="col s12 m12 l5">'+n1+"\n"+n2+'</div><div class="input-field col s6 m4 l3"><select id="sol_person'+x+'"name="sol_person'+x+'"><option value="1" selected>En Espera</option><option value="2">Papelería Aprobada</option><option value="3">Solicitud Aprobada</option><option value="4">Solicitud Rechazada</option><option value="5">Papelería Rechazada</option></select><label for="sol_person'+x+'">Opción</label></div><div class="col s6 m4 l1"><i class="material-icons">'+fun2(datachildrens)+'</i></div><div class="col s12 m4 l3"><a class="waves-effect waves-light btn-large '+btncolor+'"onclick="changer(sol_person'+x+',\''+key+'\',\''+$("#r_sol_evento").val()+'\')">¡Cambiar!</a></div></div>');
-                    var name_select='sol_person'+x;
-                    $(name_select).val(fun1(datachildrens));
-                    $('select').material_select();
-                    x++;
+                    var ref1 = firebase.database().ref("users/"+key).once("value").then(function(snapshot2){
+                        var n1=snapshot2.child("u_mat").val().toString();
+                        var n2=snapshot2.child("f_name").val().toString();
+                        $("#r_sol_list").append('<div class="card-panel grey lighten-5 z-depth-1 row"><div class="col s12 m12 l5">'+n1+"\n"+n2+'</div><div class="input-field col s6 m4 l3"><select id="sol_person'+x+'"name="sol_person'+x+'"><option value="1" selected>En Espera</option><option value="2">Papelería Aprobada</option><option value="3">Solicitud Aprobada</option><option value="4">Solicitud Rechazada</option><option value="5">Papelería Rechazada</option></select><label for="sol_person'+x+'">Opción</label></div><div class="col s6 m4 l1"><i class="material-icons">'+fun2(datachildrens)+'</i></div><div class="col s12 m4 l3"><a class="waves-effect waves-light btn-large '+btncolor+'"onclick="changer(sol_person'+x+',\''+key+'\',\''+$("#r_sol_evento").val()+'\')">¡Cambiar!</a></div></div>');
+                        var name_select='sol_person'+x;
+                        $(name_select).val(fun1(datachildrens));
+                        $('select').material_select();
+                        x++;
                     });
                 }            
             });
