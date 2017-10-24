@@ -13,7 +13,7 @@ $(document).ready( function () {
             $("#m_Ses_out").show();
             var pathname = window.location.pathname;
             if (user.emailVerified) {
-                if(pathname=="/Registro" || pathname=="/Login"){
+                if(pathname=="/Registro" || pathname=="/Login" ||pathname=="/torneo2017"){
                     window.location.href = "https://clubderoboticaitslp.github.io/";
                 }
                 var s_user = user.uid;
