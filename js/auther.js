@@ -63,7 +63,7 @@ $(document).ready( function () {
                 document.location.href = "/Login";
             });
             var pathname = window.location.pathname;
-            if(!(pathname=="/" || pathname=="/Registro" || pathname=="/Login")){
+            if(!(pathname=="/" || pathname=="/Registro" || pathname=="/Login" ||pathname=="/torneo2017")){
                 window.location.href = "https://clubderoboticaitslp.github.io";
             }
         }
